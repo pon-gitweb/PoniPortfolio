@@ -1,0 +1,33 @@
+﻿@model IEnumerable<PoniPortfolio.Models.Experience>
+
+@{
+    ViewData["Title"] = "Experience";
+    ViewData["Banner"] = "Work Experience";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<partial name="_Banner" />
+<div class="main">
+    <div class="row justify-content-md-center">
+        <div class="col-9 p-4">
+            <div class="p-4 mb-4 text-black bg-light fs-5 lh-base text-black-50">
+               I have over 30+ years in multiple industries such as Hospitality, Teaching, Aquiculture, Logistics, Sales, Construction, Transport, and Training. In these roles I have built experience, leadership skills, people management, customer and employee engagement techniques, and an excellent track record of people management and project management. 
+            </div>
+        </div>
+        @foreach (var item in Model)
+        {
+            <div class="row item justify-content-md-center mb-5 lh-base">
+                <div class="col-3">
+                    <ul class="list-unstyled ps-4">
+                        <li class="fs-5">@Html.DisplayFor(modelItem => item.Role)</li>
+                        <li class="fs-6 text-black-50">@Html.DisplayFor(modelItem => item.Company)</li>
+                        <li class="fs-6 text-black-50">@Html.DisplayFor(modelItem => item.Duration)</li>
+                    </ul>
+                </div>
+                <div class="col-6 pe-4">@Html.DisplayFor(modelItem => item.Description)</div>
+            </div>
+
+        }
+
+    </div>
+</div>
+<partial name="_Paging" />

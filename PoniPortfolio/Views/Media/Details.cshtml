@@ -1,0 +1,59 @@
+﻿@model PoniPortfolio.Models.Media
+
+@{
+    ViewData["Title"] = "Details";
+    ViewData["Banner"] = "Media Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<partial name="_Banner"/>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2 p-3">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-10 p-3">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-sm-2 p-3">
+            @Html.DisplayNameFor(model => model.Source)
+        </dt>
+        <dd class = "col-sm-10 p-3">
+            @Html.DisplayFor(model => model.Source)
+        </dd>
+        <dt class = "col-sm-2 p-3">
+            @Html.DisplayNameFor(model => model.ThumbNail)
+        </dt>
+        <dd class = "col-sm-10 p-3">
+            @Html.DisplayFor(model => model.ThumbNail)
+        </dd>
+        <dt class = "col-sm-2 p-3">
+            @Html.DisplayNameFor(model => model.IsFeatured)
+        </dt>
+        <dd class = "col-sm-10 p-3">
+            @Html.DisplayFor(model => model.IsFeatured)
+        </dd>
+        <dt class = "col-sm-2 p-3">
+            @Html.DisplayNameFor(model => model.Decsription)
+        </dt>
+        <dd class = "col-sm-10 p-3">
+            @Html.DisplayFor(model => model.Decsription)
+        </dd>
+        <dt class = "col-sm-2 p-3">
+            @Html.DisplayNameFor(model => model.Tags)
+        </dt>
+        <dd class = "col-sm-10 p-3">
+            @Html.DisplayFor(model => model.Tags)
+        </dd>
+        <dt class = "col-sm-2 p-3">
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+        <dd class = "col-sm-10 p-3">
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

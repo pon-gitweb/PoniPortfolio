@@ -1,0 +1,43 @@
+﻿@model IEnumerable<PoniPortfolio.Models.Media>
+
+@{
+    ViewData["Title"] = "Media";
+    ViewData["banner"] = "Media Appearances";
+}
+<partial name="_Banner" />
+<div class="main">
+    <div class="row justify-content-md-center">
+        <div class="col-9">
+            <div class="p-4 text-black bg-light lh-base mb-5 text-black-50">
+               I have been fortunate enough to recieve some media attention for roles that I have conducted over the years. Here are some of the instances that featured some of my appearances. </div>
+        </div>
+
+        @foreach (var item in Model)
+        {
+
+            <div class="row item justify-content-md-center mb-5 lh-base">
+                <div class="col-3">
+                    <ul class="list-unstyled">
+                         <li>
+                            <a href="@item.Source" target="_blank">
+                                <img src="@item.ThumbNail" class="img-fluid" alt="PoniMedia" />
+                            </a>
+                            
+                            </li>
+
+                        <li class="fs-6 lh-lg text-center">@Html.DisplayFor(modelItem => item.Title)</li>
+                    </ul>
+                </div>
+                <div class="col-7">
+                    @Html.DisplayFor(modelItem => item.Decsription)
+                    <div>
+                        <a asp-action="Details" asp-route-id="@item?.Id">
+                            Click for detail
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<partial name="_Paging" />

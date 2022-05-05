@@ -1,0 +1,41 @@
+﻿@model IEnumerable<PoniPortfolio.Models.Qualifications>
+
+@{
+    ViewData["Title"] = "Qualifications/Awards";
+    ViewData["Banner"] = "Qualifications";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<partial name="_Banner" />
+<div class="main">
+    <div class="row justify-content-md-center">
+        <div class="col-9 p-4">
+            <div class="p-4 mb-4 text-black bg-light fs-5 lh-base text-black-50">
+                I believe education and experience are the corner stone to innovation, creativity, focus and drive. This system allows me to continue to learn and develop invaluable skill sets. I have accumulated working excellence in multiple fields and continue to develop and learn as I add to my personal resources and the resources of any business I work with. 
+
+            </div>
+        </div>
+        @foreach (var item in Model)
+        {
+
+            <div class="row item justify-content-md-center mb-5 lh-base">
+                <div class="col-3">
+                    <ul class="list-unstyled">
+                        <li class="fs-6 lh-lg text-center">@Html.DisplayFor(modelItem => item.Qualification)</li>
+                        <li class="fs-6 lh-lg text-center">@Html.DisplayFor(modelItem => item.Major)</li>
+                    </ul>
+                </div>
+                <div class="col-7">
+                    @Html.DisplayFor(modelItem => item.Institution)
+                    <div>
+                        <a asp-action="Details" asp-route-id="@item?.Id">
+                            Click for detail
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+
+

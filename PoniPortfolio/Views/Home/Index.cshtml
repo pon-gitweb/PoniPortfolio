@@ -1,0 +1,109 @@
+﻿@model PoniPortfolio.Models.ListModel
+@{
+    ViewData["Title"] = "Home Page";
+    ViewData["Banner"] = "Home";
+}
+
+<div class="about banner p-0">
+    <div class="p-4 p-md-5 text-white-0 bg-dark" style="background-image: url('/pic/Banner.jpg')";>
+
+        <div class="px-0 text-white text-center">
+            <h2 class="display-4">Poni Sula</h2>
+            <div class="display-6 mb-4">Project & People Management Specialist</div>
+            <p class="fs-5 fw-light ps-5 pe-5 ms-5 me-5">Fa'afeiloa'i i le itulau autu o Poni Sula...A e fia tu'u sau fe'au pe fa'afeso'ota'i a'u ou te fa'atalitali e talanoa vave atu ia te oe.  Welcome, if you would like to get in touch, please leave a message.</p>
+        </div>
+    </div>
+</div>
+
+<div class="skill">
+    <h2 class="text-center display-5 pt-3 pb-3 bg-muted">Skills</h2>
+    <div class="main bg-light bg-opacity-70">
+    <div class="row row-cols-3 main">
+        @foreach (var item in Model.SkillsModel)
+        {
+            <div class="col pt-2 pb-2">
+                <ul class="bars_list list-unstyled lh-lg">
+                    <li class="ps-5 pe-5"><span class="float-end text-secondary"></span>@Html.DisplayFor(modelItem => item.Name) </li>
+                    <li class="pe-5 ps-5">
+                        <div class="progress border border-secondary bg-transparent opacity-50">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" aria-valuenow="@item.Percentage" aria-valuemin="0" aria-valuemax="100" style="width: @item.Percentage%"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        }
+    </div>
+    </div>
+</div>
+
+<div class="experience">
+    <h2 class="text-center display-5 pt-3 pb-3 bg-muted">Experience</h2>
+    <div class="main bg-light bg-opacity-70">
+    @foreach (var item in Model.ExperienceModel)
+    {
+        if(item.IsFeatured)
+            {<div class="row g-0 item justify-content-md-center mt-5 pb-5 pe-0 ps-0 lh-base border-bottom">
+            <div class="col-3">
+                <ul class="list-unstyled">
+                    <li class="fs-5">@Html.DisplayFor(modelItem => item.Role)</li>
+                    <li class="fs-6 text-black-50">@Html.DisplayFor(modelItem => item.Company)</li>
+                    <li class="fs-6 text-black-50">@Html.DisplayFor(modelItem => item.Duration)</li>
+                </ul>
+            </div>
+            <div class="col-7 lh-lg">@Html.DisplayFor(modelItem => item.Description)</div>
+        </div>
+            }
+    }
+    </div>
+</div>
+
+<div class="Media">
+    <h2 class="text-center display-5 pt-3 pb-3 bg-muted">Media</h2>
+    <div class="Media bg-light bg-opacity-70">
+    <div class="row item justify-content-md-center mb-5 lh-base row-cols-3 pe-4 ps-4 ">
+        @foreach (var item in Model.MediaModel)
+        {
+            if(item.IsFeatured)
+            {
+                <div class="col">
+                <ul class="list-unstyled">
+                    <li><a href="@item.Source" target="_blank"><img src="@item.ThumbNail" class="img-fluid" alt="PoniMedia" /></a></li>
+                    <li class="fs-6 lh-lg text-center">@Html.DisplayFor(modelItem => item.Title)</li>
+                </ul>
+            </div>
+            }
+        }
+    </div>
+    </div>
+</div>
+
+<div class="Contact">
+    <h2 class="text-center display-5 pt-3 pb-3 bg-muted">Interested?....Get in Touch</h2>
+  
+    <div class="row g-5 pt-5 pb-5 fs-6 justify-content-md-center messagebox">
+        <div class="col-3 text-dark text-end lh-base pe-4">
+            <h1 class="fs-4">Write a message</h1>
+            <p>If you have questions, feel free to use the message box on the right </p>
+            
+        </div>
+        <div class="col-7">
+            <form asp-controller="Contact" asp-action="LeaveMessage" method="post">
+                <div class="pb-4 pt-2 row g-0">
+                    <div class="form-floating col pe-4">
+                        <input type="email" class="form-control" id="Email" name="Email" placeholder="name@example.com">
+                        <label for="Email">Email address</label>
+                    </div>
+                    <div class="form-floating col">
+                        <input type="text" class="form-control" id="FullName" name="FullName" placeholder="Your Name">
+                        <label for="FullName">Your Name</label>
+                    </div>
+                </div>
+                <div class="pb-4 form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="Message" name="Message" style="height: 100px"></textarea>
+                    <label for="Message">Message</label>
+                </div>
+                <div class="pb-4"><button type="submit" class="btn btn-light text-uppercase">send a message</button></div>
+            </form>
+        </div>
+    </div>
+ </div>
