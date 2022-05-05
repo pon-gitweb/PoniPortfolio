@@ -16,7 +16,7 @@ RUN dotnet build "PoniPortfolio.csproj" -c Release -o /app/build
 FROM build AS publish
 RUN dotnet publish "PoniPortfolio.csproj" -c Release -o /app/publish
 
-COPY "/PoniPortfolio/db/PoniPortfolio.db" "/app/publish/"
+COPY "/PoniPortfolio/db" "/app/publish/db"
 
 FROM base AS final
 WORKDIR /app
