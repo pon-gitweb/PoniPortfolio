@@ -5,8 +5,6 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoniPortfolio", "PoniPortfolio\PoniPortfolio.csproj", "{BE2E1333-A9DF-4309-92E0-6D2042FF7F71}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PONIClassLib", "..\..\..\Desktop\WebApplication ProjectOne\PONI\PONIClassLib\PONIClassLib.csproj", "{1C67E27E-7CD9-44FC-9C64-0CD4E439DC0C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{BE2E1333-A9DF-4309-92E0-6D2042FF7F71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE2E1333-A9DF-4309-92E0-6D2042FF7F71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE2E1333-A9DF-4309-92E0-6D2042FF7F71}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1C67E27E-7CD9-44FC-9C64-0CD4E439DC0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1C67E27E-7CD9-44FC-9C64-0CD4E439DC0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1C67E27E-7CD9-44FC-9C64-0CD4E439DC0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1C67E27E-7CD9-44FC-9C64-0CD4E439DC0C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

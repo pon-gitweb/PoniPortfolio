@@ -21,4 +21,4 @@ COPY "/PoniPortfolio/db/PoniPortfolio.db" "/app/publish/"
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "PoniPortfolio.dll"]
+ENTRYPOINT ["dotnet", "PoniPortfolio.dll", "--environment=X"]
